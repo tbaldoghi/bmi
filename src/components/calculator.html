@@ -1,17 +1,22 @@
 <ion-content>
-    <form>
-        <ion-item>
-            <ion-label>
-                Height
-            </ion-label>
-            <ion-input placeholder="Height"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                Weight
-            </ion-label>
-            <ion-input placeholder="Weight"></ion-input>
-        </ion-item>
-            <button ion-button type="submit">Calc</button>
-    </form>
+    <ion-card>
+        <ion-card-content>
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+                <ion-item>
+                    <ion-label>
+                        Height
+                    </ion-label>
+                    <ion-input type="text" [(ngModel)]="height" name="height" placeholder="Height"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Weight
+                    </ion-label>
+                    <ion-input type="text" [(ngModel)]="weight" name="weight" placeholder="Weight"></ion-input>
+                </ion-item>
+                <br>
+                <button ion-button type="submit">Calculate</button>
+            </form>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

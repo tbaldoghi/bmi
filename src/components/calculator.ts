@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
 })
 
 export class Calculator {
+    public height: number;
+    public weight: number;
+
     constructor() {
 
     }
+
+    private onSubmit(form) {
+
+    }
+
+
 }

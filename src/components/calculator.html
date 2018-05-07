@@ -1,4 +1,10 @@
 <ion-content>
+    <ion-spinner *ngIf="this.loading"></ion-spinner>
+    <ion-item *ngIf="!this.loading">
+        <p *ngFor="let item of this.data">
+            {{item.name}}: {{item.min}} - {{item.max}}
+        </p>
+    </ion-item>
     <ion-card>
         <ion-card-content>
             <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
@@ -6,13 +12,13 @@
                     <ion-label>
                         Height
                     </ion-label>
-                    <ion-input type="text" [(ngModel)]="height" name="height" placeholder="Height"></ion-input>
+                    <ion-input type="number" [(ngModel)]="height" name="height" [required]="true" placeholder="cm"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label>
                         Weight
                     </ion-label>
-                    <ion-input type="text" [(ngModel)]="weight" name="weight" placeholder="Weight"></ion-input>
+                    <ion-input type="number" [(ngModel)]="weight" name="weight" [required]="true" placeholder="kg"></ion-input>
                 </ion-item>
                 <br>
                 <button ion-button type="submit">Calculate</button>
